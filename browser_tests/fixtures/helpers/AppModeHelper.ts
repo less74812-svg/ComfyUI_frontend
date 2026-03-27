@@ -104,6 +104,12 @@ export class AppModeHelper {
       .filter({ has: this.page.getByRole('button', { name: 'All' }) })
       .first()
   }
+  get centerPanel(): Locator {
+    return this.page.getByTestId(TestIds.linear.centerPanel)
+  }
+  get mobileView(): Locator {
+    return this.page.getByTestId(TestIds.linear.mobile)
+  }
 
   /** The Run button in the app mode footer. */
   get runButton(): Locator {
