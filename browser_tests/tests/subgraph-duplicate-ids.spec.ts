@@ -43,6 +43,31 @@ test.describe('Subgraph duplicate ID remapping', { tag: ['@subgraph'] }, () => {
     expect(rootIds).toEqual([1, 2, 5])
   })
 
+  test('Promoted widget tuples are stable after full page reload boot path', async ({
+    comfyPage
+  }) => {
+    await comfyPage.workflow.loadWorkflow(WORKFLOW)
+    await comfyPage.nextFrame()
+
+    const beforeSnapshot =
+      await comfyPage.subgraph.getHostPromotedTupleSnapshot()
+    expect(beforeSnapshot.length).toBeGreaterThan(0)
+    expect(
+      beforeSnapshot.some(({ promotedWidgets }) => promotedWidgets.length > 0)
+    ).toBe(true)
+
+    await comfyPage.page.reload()
+    await comfyPage.page.waitForFunction(() => !!window.app)
+    await comfyPage.workflow.loadWorkflow(WORKFLOW)
+    await comfyPage.nextFrame()
+
+    await expect(async () => {
+      const afterSnapshot =
+        await comfyPage.subgraph.getHostPromotedTupleSnapshot()
+      expect(afterSnapshot).toEqual(beforeSnapshot)
+    }).toPass({ timeout: 5_000 })
+  })
+
   test('All links reference valid nodes in their graph', async ({
     comfyPage
   }) => {
@@ -85,16 +110,11 @@ test.describe('Subgraph duplicate ID remapping', { tag: ['@subgraph'] }, () => {
     const subgraphNode = await comfyPage.nodeOps.getNodeRefById('5')
     await subgraphNode.navigateIntoSubgraph()
 
-    const isInSubgraph = () =>
-      comfyPage.page.evaluate(
-        () => window.app!.canvas.graph?.isRootGraph === false
-      )
-
-    expect(await isInSubgraph()).toBe(true)
+    expect(await comfyPage.subgraph.isInSubgraph()).toBe(true)
 
     await comfyPage.page.keyboard.press('Escape')
     await comfyPage.nextFrame()
 
-    expect(await isInSubgraph()).toBe(false)
+    expect(await comfyPage.subgraph.isInSubgraph()).toBe(false)
   })
 })

@@ -1,6 +1,6 @@
 {
   "name": "@comfyorg/comfyui-frontend",
-  "version": "1.42.4",
+  "version": "1.43.8",
   "private": true,
   "description": "Official front-end implementation of ComfyUI",
   "homepage": "https://comfy.org",
@@ -36,7 +36,6 @@
     "lint:desktop": "nx run @comfyorg/desktop-ui:lint",
     "locale": "lobe-i18n locale",
     "oxlint": "oxlint src --type-aware",
-    "preinstall": "pnpm dlx only-allow pnpm",
     "prepare": "husky || true && git config blame.ignoreRevsFile .git-blame-ignore-revs || true",
     "preview": "nx preview",
     "storybook": "nx storybook",
@@ -45,7 +44,7 @@
     "stylelint": "stylelint --cache '{apps,packages,src}/**/*.{css,vue}'",
     "comfy-test": "tsx tools/test-recorder/src/index.ts",
     "test:browser": "pnpm exec nx e2e",
-    "test:browser:local": "cross-env PLAYWRIGHT_LOCAL=1 pnpm test:browser",
+    "test:browser:local": "cross-env PLAYWRIGHT_LOCAL=1 PLAYWRIGHT_TEST_URL=http://localhost:5173 pnpm test:browser",
     "test:unit": "nx run test",
     "typecheck": "vue-tsc --noEmit",
     "typecheck:browser": "vue-tsc --project browser_tests/tsconfig.json",
@@ -82,6 +81,7 @@
     "@tiptap/starter-kit": "catalog:",
     "@vueuse/core": "catalog:",
     "@vueuse/integrations": "catalog:",
+    "@vueuse/router": "^14.2.0",
     "@xterm/addon-fit": "^0.10.0",
     "@xterm/addon-serialize": "^0.13.0",
     "@xterm/xterm": "^5.5.0",
@@ -135,6 +135,9 @@
     "@storybook/vue3": "catalog:",
     "@storybook/vue3-vite": "catalog:",
     "@tailwindcss/vite": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/user-event": "catalog:",
+    "@testing-library/vue": "catalog:",
     "@types/fs-extra": "catalog:",
     "@types/jsdom": "catalog:",
     "@types/node": "catalog:",
@@ -153,6 +156,7 @@
     "eslint-plugin-import-x": "catalog:",
     "eslint-plugin-oxlint": "catalog:",
     "eslint-plugin-storybook": "catalog:",
+    "eslint-plugin-testing-library": "catalog:",
     "eslint-plugin-unused-imports": "catalog:",
     "eslint-plugin-vue": "catalog:",
     "fast-check": "catalog:",
@@ -177,9 +181,7 @@
     "storybook": "catalog:",
     "stylelint": "catalog:",
     "tailwindcss": "catalog:",
-    "tailwindcss-primeui": "catalog:",
     "tsx": "catalog:",
-    "tw-animate-css": "catalog:",
     "typescript": "catalog:",
     "typescript-eslint": "catalog:",
     "unplugin-icons": "catalog:",
@@ -198,11 +200,21 @@
     "zod-to-json-schema": "catalog:"
   },
   "engines": {
-    "node": "24.x"
+    "node": "24.x",
+    "pnpm": ">=10"
   },
+  "packageManager": "pnpm@10.33.0",
   "pnpm": {
     "overrides": {
       "vite": "catalog:"
-    }
+    },
+    "ignoredBuiltDependencies": [
+      "@firebase/util",
+      "core-js",
+      "protobufjs",
+      "sharp",
+      "unrs-resolver",
+      "vue-demi"
+    ]
   }
 }
