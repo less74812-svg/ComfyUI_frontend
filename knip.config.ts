@@ -26,6 +26,9 @@ const config: KnipConfig = {
     },
     'packages/registry-types': {
       project: ['src/**/*.{js,ts}']
+    },
+    'tools/test-recorder': {
+      project: ['src/**/*.ts']
     }
   },
   ignoreBinaries: ['python3', 'gh'],
