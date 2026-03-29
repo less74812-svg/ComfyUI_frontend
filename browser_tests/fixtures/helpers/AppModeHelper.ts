@@ -110,6 +110,9 @@ export class AppModeHelper {
   get mobileView(): Locator {
     return this.page.getByTestId(TestIds.linear.mobile)
   }
+  get mobileNavigation(): Locator {
+    return this.page.getByRole('tablist').filter({ hasText: 'Run' })
+  }
 
   /** The Run button in the app mode footer. */
   get runButton(): Locator {
@@ -127,6 +130,9 @@ export class AppModeHelper {
   async switchMobileWorkflow(workflowName: string) {
     await this.mobileWorkflows.click()
     await this.page.getByRole('menu').getByText(workflowName).click()
+  }
+  async mobileNavigateTab(name: 'run' | 'outputs' | 'assets') {
+    await this.mobileNavigation.getByRole('tab', { name }).click()
   }
 
   /**
