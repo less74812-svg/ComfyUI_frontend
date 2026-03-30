@@ -40,6 +40,7 @@ const config: KnipConfig = {
       ignoreDependencies: ['@comfyorg/design-system', '@vercel/analytics']
     },
     'tools/test-recorder': {
+      entry: ['src/index.ts'],
       project: ['src/**/*.ts']
     }
   },
