@@ -8,19 +8,22 @@ import { BuilderFooterHelper } from './BuilderFooterHelper'
 import { BuilderSaveAsHelper } from './BuilderSaveAsHelper'
 import { BuilderSelectHelper } from './BuilderSelectHelper'
 import { BuilderStepsHelper } from './BuilderStepsHelper'
+import { MobileAppHelper } from './MobileAppHelper'
 
 export class AppModeHelper {
-  readonly steps: BuilderStepsHelper
   readonly footer: BuilderFooterHelper
+  readonly mobile: MobileAppHelper
   readonly saveAs: BuilderSaveAsHelper
   readonly select: BuilderSelectHelper
+  readonly steps: BuilderStepsHelper
   readonly widgets: AppModeWidgetHelper
 
   constructor(private readonly comfyPage: ComfyPage) {
-    this.steps = new BuilderStepsHelper(comfyPage)
+    this.mobile = new MobileAppHelper(comfyPage)
     this.footer = new BuilderFooterHelper(comfyPage)
     this.saveAs = new BuilderSaveAsHelper(comfyPage)
     this.select = new BuilderSelectHelper(comfyPage)
+    this.steps = new BuilderStepsHelper(comfyPage)
     this.widgets = new AppModeWidgetHelper(comfyPage)
   }
 
@@ -107,32 +110,12 @@ export class AppModeHelper {
   get centerPanel(): Locator {
     return this.page.getByTestId(TestIds.linear.centerPanel)
   }
-  get mobileView(): Locator {
-    return this.page.getByTestId(TestIds.linear.mobile)
-  }
-  get mobileNavigation(): Locator {
-    return this.page.getByRole('tablist').filter({ hasText: 'Run' })
-  }
 
   /** The Run button in the app mode footer. */
   get runButton(): Locator {
     return this.page
       .getByTestId('linear-run-button')
       .getByRole('button', { name: /run/i })
-  }
-
-  get mobileWorkflows() {
-    return this.mobileView.getByTestId(TestIds.linear.mobileWorkflows)
-  }
-  get mobileActionmenu() {
-    return this.mobileView.getByTestId(TestIds.linear.mobileActionMenu)
-  }
-  async switchMobileWorkflow(workflowName: string) {
-    await this.mobileWorkflows.click()
-    await this.page.getByRole('menu').getByText(workflowName).click()
-  }
-  async mobileNavigateTab(name: 'run' | 'outputs' | 'assets') {
-    await this.mobileNavigation.getByRole('tab', { name }).click()
   }
 
   /**
