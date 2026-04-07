@@ -1438,6 +1438,22 @@
       }
     }
   },
+  "ComfyNumberConvert": {
+    "display_name": "Conversión de número",
+    "inputs": {
+      "value": {
+        "name": "valor"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      },
+      "1": {
+        "tooltip": null
+      }
+    }
+  },
   "ComfySwitchNode": {
     "display_name": "Interruptor",
     "inputs": {
@@ -2174,6 +2190,10 @@
       "image": {
         "name": "imagen"
       },
+      "keep_aspect": {
+        "name": "mantener_proporción",
+        "tooltip": "Indica si se debe estirar el recorte para ajustarse al tamaño de salida, o rellenar con píxeles negros para preservar la relación de aspecto."
+      },
       "output_height": {
         "name": "alto de salida",
         "tooltip": "Alto al que se redimensiona cada recorte."
@@ -2214,6 +2234,23 @@
     },
     "outputs": {
       "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "CurveEditor": {
+    "display_name": "Editor de curvas",
+    "inputs": {
+      "curve": {
+        "name": "curva"
+      },
+      "histogram": {
+        "name": "histograma"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "curva",
         "tooltip": null
       }
     }
@@ -2276,6 +2313,23 @@
     "display_name": "DesactivarRuido",
     "outputs": {
       "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "DrawBBoxes": {
+    "display_name": "Dibujar BBoxes",
+    "inputs": {
+      "bboxes": {
+        "name": "bboxes"
+      },
+      "image": {
+        "name": "imagen"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "imagen_salida",
         "tooltip": null
       }
     }
@@ -3612,6 +3666,14 @@
     "description": "Aplica shaders de fragmento GLSL ES a imágenes. u_resolution (vec2) siempre está disponible.",
     "display_name": "Shader GLSL",
     "inputs": {
+      "bools": {
+        "name": "booleanos",
+        "tooltip": "Los booleanos están disponibles como u_bool0-9 (bool) en el código del shader"
+      },
+      "curves": {
+        "name": "curvas",
+        "tooltip": "Las curvas están disponibles como u_curve0-3 (sampler2D, LUT 1D) en el código del shader. Muestrea con texture(u_curve0, vec2(x, 0.5)).r"
+      },
       "floats": {
         "name": "floats",
         "tooltip": "Los floats están disponibles como u_float0-4 en el código del shader"
@@ -4092,6 +4154,39 @@
       }
     }
   },
+  "GrokVideoExtendNode": {
+    "description": "Extiende un video existente con una continuación fluida basada en un prompt de texto.",
+    "display_name": "Extender video Grok",
+    "inputs": {
+      "control_after_generate": {
+        "name": "control después de generar"
+      },
+      "model": {
+        "name": "modelo",
+        "tooltip": "El modelo a utilizar para la extensión de video."
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "prompt": {
+        "name": "prompt",
+        "tooltip": "Descripción en texto de lo que debe suceder a continuación en el video."
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "Semilla para determinar si el nodo debe ejecutarse de nuevo; los resultados reales son no deterministas independientemente de la semilla."
+      },
+      "video": {
+        "name": "video",
+        "tooltip": "Video fuente a extender. Formato MP4, 2-15 segundos."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "GrokVideoNode": {
     "description": "Genera video a partir de una indicación o una imagen",
     "display_name": "Video Grok",
@@ -4120,6 +4215,41 @@
       "resolution": {
         "name": "resolución",
         "tooltip": "La resolución del video de salida."
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "Semilla para determinar si el nodo debe ejecutarse de nuevo; los resultados reales son no deterministas independientemente de la semilla."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "GrokVideoReferenceNode": {
+    "description": "Genera video guiado por imágenes de referencia como referencias de estilo y contenido.",
+    "display_name": "Referencia a video Grok",
+    "inputs": {
+      "control_after_generate": {
+        "name": "control después de generar"
+      },
+      "model": {
+        "name": "modelo",
+        "tooltip": "El modelo a utilizar para la generación de video."
+      },
+      "model_aspect_ratio": {
+        "name": "relación de aspecto"
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "prompt": {
+        "name": "prompt",
+        "tooltip": "Descripción en texto del video deseado."
       },
       "seed": {
         "name": "semilla",
@@ -4873,6 +5003,36 @@
       "0": {
         "name": "imágenes",
         "tooltip": "Imágenes procesadas"
+      }
+    }
+  },
+  "ImageHistogram": {
+    "display_name": "Histograma de imagen",
+    "inputs": {
+      "image": {
+        "name": "imagen"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "rgb",
+        "tooltip": null
+      },
+      "1": {
+        "name": "luminancia",
+        "tooltip": null
+      },
+      "2": {
+        "name": "rojo",
+        "tooltip": null
+      },
+      "3": {
+        "name": "verde",
+        "tooltip": null
+      },
+      "4": {
+        "name": "azul",
+        "tooltip": null
       }
     }
   },
@@ -6744,6 +6904,54 @@
     "outputs": {
       "0": {
         "name": "imagen_salida",
+        "tooltip": null
+      }
+    }
+  },
+  "LTXVReferenceAudio": {
+    "description": "Establece el audio de referencia para la transferencia de identidad de locutor con ID-LoRA. Codifica un clip de audio de referencia en el condicionamiento y, opcionalmente, modifica el modelo con una guía de identidad (pase adicional sin referencia, amplificando el efecto de identidad del locutor).",
+    "display_name": "LTXV Reference Audio (ID-LoRA)",
+    "inputs": {
+      "audio_vae": {
+        "name": "audio_vae",
+        "tooltip": "LTXV Audio VAE para la codificación."
+      },
+      "end_percent": {
+        "name": "porcentaje_fin",
+        "tooltip": "Fin del rango sigma donde la guía de identidad está activa."
+      },
+      "identity_guidance_scale": {
+        "name": "escala_guía_identidad",
+        "tooltip": "Intensidad de la guía de identidad. Ejecuta un pase adicional sin referencia en cada paso para amplificar la identidad del locutor. Establece en 0 para desactivar (sin pase adicional)."
+      },
+      "model": {
+        "name": "modelo"
+      },
+      "negative": {
+        "name": "negativo"
+      },
+      "positive": {
+        "name": "positivo"
+      },
+      "reference_audio": {
+        "name": "audio_referencia",
+        "tooltip": "Clip de audio de referencia cuya identidad de locutor se va a transferir. Se recomienda ~5 segundos (duración de entrenamiento). Clips más cortos o largos pueden degradar la transferencia de identidad de voz."
+      },
+      "start_percent": {
+        "name": "porcentaje_inicio",
+        "tooltip": "Inicio del rango sigma donde la guía de identidad está activa."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      },
+      "1": {
+        "name": "positivo",
+        "tooltip": null
+      },
+      "2": {
+        "name": "negativo",
         "tooltip": null
       }
     }
@@ -12069,6 +12277,34 @@
       }
     }
   },
+  "RTDETR_detect": {
+    "display_name": "Detección RT-DETR",
+    "inputs": {
+      "class_name": {
+        "name": "nombre_clase",
+        "tooltip": "Filtrar detecciones por clase. Establecer en 'all' para desactivar el filtrado."
+      },
+      "image": {
+        "name": "imagen"
+      },
+      "max_detections": {
+        "name": "máx_detecciones",
+        "tooltip": "Número máximo de detecciones a devolver por imagen. En orden descendente de puntuación de confianza."
+      },
+      "model": {
+        "name": "modelo"
+      },
+      "threshold": {
+        "name": "umbral"
+      }
+    },
+    "outputs": {
+      "0": {
+        "name": "bboxes",
+        "tooltip": null
+      }
+    }
+  },
   "RandomCropImages": {
     "display_name": "Recorte Aleatorio de Imágenes",
     "inputs": {
@@ -15474,6 +15710,10 @@
       "1": {
         "name": "FBX",
         "tooltip": null
+      },
+      "2": {
+        "name": "imagen UV",
+        "tooltip": null
       }
     }
   },
@@ -15764,6 +16004,9 @@
       "sampling_mode_min_p": {
         "name": "min_p"
       },
+      "sampling_mode_presence_penalty": {
+        "name": "penalización_de_presencia"
+      },
       "sampling_mode_repetition_penalty": {
         "name": "penalización_por_repetición"
       },
@@ -15778,6 +16021,10 @@
       },
       "sampling_mode_top_p": {
         "name": "top_p"
+      },
+      "thinking": {
+        "name": "pensando",
+        "tooltip": "Operar en modo de pensamiento si el modelo lo permite."
       }
     },
     "outputs": {
@@ -15808,6 +16055,9 @@
       "sampling_mode_min_p": {
         "name": "min_p"
       },
+      "sampling_mode_presence_penalty": {
+        "name": "penalización_de_presencia"
+      },
       "sampling_mode_repetition_penalty": {
         "name": "penalización_por_repetición"
       },
@@ -15822,6 +16072,10 @@
       },
       "sampling_mode_top_p": {
         "name": "top_p"
+      },
+      "thinking": {
+        "name": "pensando",
+        "tooltip": "Operar en modo de pensamiento si el modelo lo permite."
       }
     },
     "outputs": {
@@ -16090,6 +16344,10 @@
       "positive": {
         "name": "positivo",
         "tooltip": "El condicionamiento positivo a utilizar para el entrenamiento."
+      },
+      "quantized_backward": {
+        "name": "quantized_backward",
+        "tooltip": "Al usar 'training_dtype' como 'none' y entrenar en un modelo cuantizado, realiza el retropropagado con multiplicación de matrices cuantizadas cuando está activado."
       },
       "rank": {
         "name": "rango",
@@ -17715,6 +17973,241 @@
       },
       "width": {
         "name": "ancho"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "Wan2ImageToVideoApi": {
+    "description": "Genera un video a partir de una imagen del primer fotograma, con opción de imagen del último fotograma y audio.",
+    "display_name": "Wan 2.7 Imagen a Video",
+    "inputs": {
+      "audio": {
+        "name": "audio",
+        "tooltip": "Audio para guiar la generación del video (por ejemplo, sincronización labial, movimiento al ritmo). Duración: 2s-30s. Si no se proporciona, el modelo genera automáticamente música de fondo o efectos de sonido acordes."
+      },
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "first_frame": {
+        "name": "primer_fotograma",
+        "tooltip": "Imagen del primer fotograma. La relación de aspecto de salida se deriva de esta imagen."
+      },
+      "last_frame": {
+        "name": "último_fotograma",
+        "tooltip": "Imagen del último fotograma. El modelo genera un video que transiciona del primer al último fotograma."
+      },
+      "model": {
+        "name": "modelo"
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_negative_prompt": {
+        "name": "prompt_negativo"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "prompt_extend": {
+        "name": "extender_prompt",
+        "tooltip": "Si se debe mejorar el prompt con asistencia de IA."
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "Semilla para usar en la generación."
+      },
+      "watermark": {
+        "name": "marca_de_agua",
+        "tooltip": "Si se debe añadir una marca de agua generada por IA al resultado."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "Wan2ReferenceVideoApi": {
+    "description": "Genera un video con una persona u objeto a partir de materiales de referencia. Soporta actuaciones de un solo personaje e interacciones entre varios personajes.",
+    "display_name": "Wan 2.7 Referencia a Video",
+    "inputs": {
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "model": {
+        "name": "modelo"
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_negative_prompt": {
+        "name": "prompt_negativo"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "relación"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "Semilla para usar en la generación."
+      },
+      "watermark": {
+        "name": "marca_de_agua",
+        "tooltip": "Si se debe añadir una marca de agua generada por IA al resultado."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "Wan2TextToVideoApi": {
+    "description": "Genera un video a partir de un texto usando el modelo Wan 2.7.",
+    "display_name": "Wan 2.7 Texto a Video",
+    "inputs": {
+      "audio": {
+        "name": "audio",
+        "tooltip": "Audio para guiar la generación del video (por ejemplo, sincronización labial, movimiento al ritmo). Duración: 3s-30s. Si no se proporciona, el modelo genera automáticamente música de fondo o efectos de sonido acordes."
+      },
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "model": {
+        "name": "modelo"
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_negative_prompt": {
+        "name": "prompt_negativo"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "relación de aspecto"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "prompt_extend": {
+        "name": "extender_prompt",
+        "tooltip": "Si se debe mejorar el prompt con asistencia de IA."
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "Semilla para usar en la generación."
+      },
+      "watermark": {
+        "name": "marca de agua",
+        "tooltip": "Si se debe añadir una marca de agua generada por IA al resultado."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "Wan2VideoContinuationApi": {
+    "description": "Continúa un video desde donde terminó, con control opcional del último fotograma.",
+    "display_name": "Wan 2.7 Continuación de Video",
+    "inputs": {
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "first_clip": {
+        "name": "primer_clip",
+        "tooltip": "Video de entrada desde el cual continuar. Duración: 2s-10s. La relación de aspecto de salida se deriva de este video."
+      },
+      "last_frame": {
+        "name": "último_fotograma",
+        "tooltip": "Imagen del último fotograma. La continuación hará la transición hacia este fotograma."
+      },
+      "model": {
+        "name": "modelo"
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_negative_prompt": {
+        "name": "prompt_negativo"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "prompt_extend": {
+        "name": "extender_prompt",
+        "tooltip": "Si se debe mejorar el prompt con asistencia de IA."
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "Semilla para usar en la generación."
+      },
+      "watermark": {
+        "name": "marca de agua",
+        "tooltip": "Si se debe añadir una marca de agua generada por IA al resultado."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "Wan2VideoEditApi": {
+    "description": "Edita un video usando instrucciones de texto, imágenes de referencia o transferencia de estilo.",
+    "display_name": "Wan 2.7 Edición de Video",
+    "inputs": {
+      "audio_setting": {
+        "name": "configuración_de_audio",
+        "tooltip": "'auto': el modelo decide si regenerar el audio según el prompt. 'origin': conserva el audio original del video de entrada."
+      },
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "model": {
+        "name": "modelo"
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "relación de aspecto"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "Semilla para usar en la generación."
+      },
+      "video": {
+        "name": "video",
+        "tooltip": "El video a editar."
+      },
+      "watermark": {
+        "name": "marca de agua",
+        "tooltip": "Si se debe añadir una marca de agua generada por IA al resultado."
       }
     },
     "outputs": {
