@@ -52,6 +52,18 @@ describe('transformRules', () => {
       expect(result).toContain('async ({ comfyPage })')
       expect(result).not.toContain('{ page }')
     })
+
+    it('preserves non-page fixtures when rewriting', () => {
+      const input = `test('my test', async ({ page, context }) => {`
+      const result = applyRule('replace-page-destructure', input)
+      expect(result).toContain('async ({ comfyPage, context })')
+    })
+
+    it('preserves multiple non-page fixtures', () => {
+      const input = `test('my test', async ({ page, context, browser }) => {`
+      const result = applyRule('replace-page-destructure', input)
+      expect(result).toContain('async ({ comfyPage, context, browser })')
+    })
   })
 
   describe('locator transforms', () => {

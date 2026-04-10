@@ -34,9 +34,17 @@ export const transformRules: TransformRule[] = [
   // === Fixture transforms ===
   {
     name: 'replace-page-destructure',
-    description: 'Use comfyPage fixture instead of page',
-    pattern: /async\s*\(\s*\{\s*page\s*(?:,\s*\w+\s*)*\}\s*\)/g,
-    replacement: 'async ({ comfyPage })',
+    description:
+      'Use comfyPage fixture instead of page, preserving other fixtures',
+    pattern: /async\s*\(\s*\{\s*([^}]*\bpage\b[^}]*)\}\s*\)/g,
+    replacement: (_match: string, fixtures: string) => {
+      const mapped = fixtures
+        .split(',')
+        .map((f) => f.trim())
+        .filter(Boolean)
+        .map((f) => (f === 'page' ? 'comfyPage' : f))
+      return `async ({ ${mapped.join(', ')} })`
+    },
     category: 'fixture'
   },
 
