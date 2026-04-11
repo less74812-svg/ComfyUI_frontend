@@ -1,5 +1,5 @@
 import { execSync, spawnSync } from 'node:child_process'
-import { pass, fail } from '../ui/logger'
+import { pass, fail, info, blank } from '../ui/logger'
 
 interface PrOptions {
   testFilePath: string
@@ -33,6 +33,16 @@ export async function checkGhAvailable(): Promise<{
   } catch {
     return { available: true, authenticated: false }
   }
+}
+
+function logRecoveryHint(branchName: string) {
+  blank()
+  info([
+    'To clean up and retry, run:',
+    `  git checkout -`,
+    `  git branch -D ${branchName}`
+  ])
+  blank()
 }
 
 export async function createPr(options: PrOptions): Promise<PrResult> {
@@ -80,6 +90,7 @@ export async function createPr(options: PrOptions): Promise<PrResult> {
   })
   if (push.status !== 0) {
     fail('Git push failed', push.stderr.trim())
+    logRecoveryHint(branchName)
     return { success: false, error: push.stderr.trim() }
   }
   pass('Pushed branch', branchName)
@@ -91,6 +102,7 @@ export async function createPr(options: PrOptions): Promise<PrResult> {
   )
   if (pr.status !== 0) {
     fail('PR creation failed', pr.stderr.trim())
+    logRecoveryHint(branchName)
     return { success: false, error: pr.stderr.trim() }
   }
 
