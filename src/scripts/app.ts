@@ -1,7 +1,11 @@
-import { useEventListener, useResizeObserver } from '@vueuse/core'
+import {
+  useDevicePixelRatio,
+  useEventListener,
+  useResizeObserver
+} from '@vueuse/core'
 import _ from 'es-toolkit/compat'
 import type { ToastMessageOptions } from 'primevue/toast'
-import { reactive, unref } from 'vue'
+import { reactive, unref, watch } from 'vue'
 import { shallowRef } from 'vue'
 
 import { useCanvasPositionConversion } from '@/composables/element/useCanvasPositionConversion'
@@ -949,6 +953,13 @@ export class ComfyApp {
       if (canvasEl.target instanceof HTMLCanvasElement) {
         this.resizeCanvas(canvasEl.target)
       }
+    })
+
+    // Re-scale canvas when DPR changes (e.g. moving between monitors)
+    const { pixelRatio } = useDevicePixelRatio()
+    watch(pixelRatio, () => {
+      const canvas = unref(this.canvasElRef)
+      if (canvas) this.resizeCanvas(canvas)
     })
 
     await useExtensionService().invokeExtensionsAsync('init')
