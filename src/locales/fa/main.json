@@ -2495,6 +2495,8 @@
     "advancedInputs": "ورودی‌های پیشرفته",
     "bypass": "عبور",
     "color": "رنگ نود",
+    "editSubgraph": "ویرایش زیرگراف",
+    "editTitle": "ویرایش عنوان",
     "enterSubgraph": "ورود به زیرگراف",
     "errorHelp": "برای دریافت کمک بیشتر، {github} یا {support}",
     "errorHelpGithub": "ثبت یک issue در GitHub",

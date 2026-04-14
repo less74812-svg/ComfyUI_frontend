@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "description": "Создайте видео с помощью Seedance 2.0, используя изображение первого кадра и, при необходимости, последнего кадра.",
+    "display_name": "ByteDance Seedance 2.0: от первого и последнего кадра к видео",
+    "inputs": {
+      "control_after_generate": {
+        "name": "контроль после генерации"
+      },
+      "first_frame": {
+        "name": "первый кадр",
+        "tooltip": "Изображение первого кадра для видео."
+      },
+      "last_frame": {
+        "name": "последний кадр",
+        "tooltip": "Изображение последнего кадра для видео."
+      },
+      "model": {
+        "name": "модель",
+        "tooltip": "Seedance 2.0 для максимального качества; Seedance 2.0 Fast для оптимизации скорости."
+      },
+      "model_duration": {
+        "name": "длительность"
+      },
+      "model_generate_audio": {
+        "name": "генерировать аудио"
+      },
+      "model_prompt": {
+        "name": "промпт"
+      },
+      "model_ratio": {
+        "name": "соотношение сторон"
+      },
+      "model_resolution": {
+        "name": "разрешение"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed определяет, следует ли заново запускать узел; результаты всегда недетерминированы, независимо от seed."
+      },
+      "watermark": {
+        "name": "водяной знак",
+        "tooltip": "Добавлять ли водяной знак к видео."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "description": "Создавайте, редактируйте или расширяйте видео с помощью Seedance 2.0, используя референсные изображения, видео и аудио. Поддерживает мультимодальные референсы, видеомонтаж и расширение видео.",
+    "display_name": "ByteDance Seedance 2.0: референс в видео",
+    "inputs": {
+      "control_after_generate": {
+        "name": "контроль после генерации"
+      },
+      "model": {
+        "name": "модель",
+        "tooltip": "Seedance 2.0 для максимального качества; Seedance 2.0 Fast для оптимизации скорости."
+      },
+      "model_duration": {
+        "name": "длительность"
+      },
+      "model_generate_audio": {
+        "name": "генерировать аудио"
+      },
+      "model_prompt": {
+        "name": "промпт"
+      },
+      "model_ratio": {
+        "name": "соотношение сторон"
+      },
+      "model_resolution": {
+        "name": "разрешение"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed определяет, следует ли заново запускать узел; результаты всегда недетерминированы, независимо от seed."
+      },
+      "watermark": {
+        "name": "водяной знак",
+        "tooltip": "Добавлять ли водяной знак к видео."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "description": "Создайте видео с помощью моделей Seedance 2.0 на основе текстового промпта.",
+    "display_name": "ByteDance Seedance 2.0: текст в видео",
+    "inputs": {
+      "control_after_generate": {
+        "name": "контроль после генерации"
+      },
+      "model": {
+        "name": "модель",
+        "tooltip": "Seedance 2.0 для максимального качества; Seedance 2.0 Fast для оптимизации скорости."
+      },
+      "model_duration": {
+        "name": "длительность"
+      },
+      "model_generate_audio": {
+        "name": "генерировать аудио"
+      },
+      "model_prompt": {
+        "name": "промпт"
+      },
+      "model_ratio": {
+        "name": "соотношение сторон"
+      },
+      "model_resolution": {
+        "name": "разрешение"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed определяет, следует ли заново запускать узел; результаты всегда недетерминированы, независимо от seed."
+      },
+      "watermark": {
+        "name": "водяной знак",
+        "tooltip": "Добавлять ли водяной знак к видео."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "description": "Создать видео с использованием промпта и первого и последнего кадров.",
     "display_name": "ByteDance - Преобразование первого-последнего кадра в видео",

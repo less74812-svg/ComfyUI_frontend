@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "description": "Genera un video usando Seedance 2.0 a partir de una imagen del primer fotograma y, opcionalmente, una imagen del último fotograma.",
+    "display_name": "ByteDance Seedance 2.0 Primer-Último Fotograma a Video",
+    "inputs": {
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "first_frame": {
+        "name": "primer_fotograma",
+        "tooltip": "Imagen del primer fotograma para el video."
+      },
+      "last_frame": {
+        "name": "último_fotograma",
+        "tooltip": "Imagen del último fotograma para el video."
+      },
+      "model": {
+        "name": "modelo",
+        "tooltip": "Seedance 2.0 para máxima calidad; Seedance 2.0 Fast para optimización de velocidad."
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_generate_audio": {
+        "name": "generar_audio"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "relación"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "La semilla controla si el nodo debe ejecutarse de nuevo; los resultados son no deterministas independientemente de la semilla."
+      },
+      "watermark": {
+        "name": "marca_de_agua",
+        "tooltip": "Indica si se debe añadir una marca de agua al video."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "description": "Genera, edita o extiende video usando Seedance 2.0 con imágenes, videos y audio de referencia. Soporta referencia multimodal, edición de video y extensión de video.",
+    "display_name": "ByteDance Seedance 2.0 Referencia a Video",
+    "inputs": {
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "model": {
+        "name": "modelo",
+        "tooltip": "Seedance 2.0 para máxima calidad; Seedance 2.0 Fast para optimización de velocidad."
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_generate_audio": {
+        "name": "generar_audio"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "relación"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "La semilla controla si el nodo debe ejecutarse de nuevo; los resultados son no deterministas independientemente de la semilla."
+      },
+      "watermark": {
+        "name": "marca_de_agua",
+        "tooltip": "Indica si se debe añadir una marca de agua al video."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "description": "Genera video usando modelos Seedance 2.0 a partir de un prompt de texto.",
+    "display_name": "ByteDance Seedance 2.0 Texto a Video",
+    "inputs": {
+      "control_after_generate": {
+        "name": "controlar después de generar"
+      },
+      "model": {
+        "name": "modelo",
+        "tooltip": "Seedance 2.0 para máxima calidad; Seedance 2.0 Fast para optimización de velocidad."
+      },
+      "model_duration": {
+        "name": "duración"
+      },
+      "model_generate_audio": {
+        "name": "generar_audio"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "relación"
+      },
+      "model_resolution": {
+        "name": "resolución"
+      },
+      "seed": {
+        "name": "semilla",
+        "tooltip": "La semilla controla si el nodo debe ejecutarse de nuevo; los resultados son no deterministas independientemente de la semilla."
+      },
+      "watermark": {
+        "name": "marca_de_agua",
+        "tooltip": "Indica si se debe añadir una marca de agua al video."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "description": "Generar video usando prompt y primer y último fotograma.",
     "display_name": "ByteDance Primer-Último-Fotograma a Video",

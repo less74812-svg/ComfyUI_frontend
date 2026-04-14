@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "description": "Seedance 2.0 を使用して、最初のフレーム画像とオプションの最後のフレーム画像から動画を生成します。",
+    "display_name": "ByteDance Seedance 2.0 ファースト・ラストフレームから動画生成",
+    "inputs": {
+      "control_after_generate": {
+        "name": "生成後のコントロール"
+      },
+      "first_frame": {
+        "name": "最初のフレーム",
+        "tooltip": "動画の最初のフレーム画像です。"
+      },
+      "last_frame": {
+        "name": "最後のフレーム",
+        "tooltip": "動画の最後のフレーム画像です。"
+      },
+      "model": {
+        "name": "モデル",
+        "tooltip": "最高品質には Seedance 2.0、速度最適化には Seedance 2.0 Fast を使用します。"
+      },
+      "model_duration": {
+        "name": "継続時間"
+      },
+      "model_generate_audio": {
+        "name": "オーディオ生成"
+      },
+      "model_prompt": {
+        "name": "プロンプト"
+      },
+      "model_ratio": {
+        "name": "アスペクト比"
+      },
+      "model_resolution": {
+        "name": "解像度"
+      },
+      "seed": {
+        "name": "シード",
+        "tooltip": "シードはノードの再実行を制御しますが、シードに関係なく結果は非決定的です。"
+      },
+      "watermark": {
+        "name": "ウォーターマーク",
+        "tooltip": "動画にウォーターマークを追加するかどうか。"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "description": "Seedance 2.0 を使い、リファレンス画像・動画・音声から動画を生成・編集・拡張します。マルチモーダルリファレンス、動画編集、動画拡張に対応。",
+    "display_name": "ByteDance Seedance 2.0 リファレンスから動画生成",
+    "inputs": {
+      "control_after_generate": {
+        "name": "生成後のコントロール"
+      },
+      "model": {
+        "name": "モデル",
+        "tooltip": "最高品質には Seedance 2.0、速度最適化には Seedance 2.0 Fast を使用します。"
+      },
+      "model_duration": {
+        "name": "継続時間"
+      },
+      "model_generate_audio": {
+        "name": "オーディオ生成"
+      },
+      "model_prompt": {
+        "name": "プロンプト"
+      },
+      "model_ratio": {
+        "name": "アスペクト比"
+      },
+      "model_resolution": {
+        "name": "解像度"
+      },
+      "seed": {
+        "name": "シード",
+        "tooltip": "シードはノードの再実行を制御しますが、シードに関係なく結果は非決定的です。"
+      },
+      "watermark": {
+        "name": "ウォーターマーク",
+        "tooltip": "動画にウォーターマークを追加するかどうか。"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "description": "テキストプロンプトに基づき、Seedance 2.0 モデルで動画を生成します。",
+    "display_name": "ByteDance Seedance 2.0 テキストから動画生成",
+    "inputs": {
+      "control_after_generate": {
+        "name": "生成後のコントロール"
+      },
+      "model": {
+        "name": "モデル",
+        "tooltip": "最高品質には Seedance 2.0、速度最適化には Seedance 2.0 Fast を使用します。"
+      },
+      "model_duration": {
+        "name": "継続時間"
+      },
+      "model_generate_audio": {
+        "name": "オーディオ生成"
+      },
+      "model_prompt": {
+        "name": "プロンプト"
+      },
+      "model_ratio": {
+        "name": "アスペクト比"
+      },
+      "model_resolution": {
+        "name": "解像度"
+      },
+      "seed": {
+        "name": "シード",
+        "tooltip": "シードはノードの再実行を制御しますが、シードに関係なく結果は非決定的です。"
+      },
+      "watermark": {
+        "name": "ウォーターマーク",
+        "tooltip": "動画にウォーターマークを追加するかどうか。"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "description": "プロンプトと最初・最後のフレームを使用して動画を生成します。",
     "display_name": "ByteDance 最初-最後フレームから動画生成",

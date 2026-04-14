@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "description": "Seedance 2.0 kullanarak bir ilk kare görseli ve isteğe bağlı son kare görseli ile video oluşturun.",
+    "display_name": "ByteDance Seedance 2.0 İlk-Son-Kare'den Videoya",
+    "inputs": {
+      "control_after_generate": {
+        "name": "oluşturduktan sonra kontrol et"
+      },
+      "first_frame": {
+        "name": "first_frame",
+        "tooltip": "Video için ilk kare görseli."
+      },
+      "last_frame": {
+        "name": "last_frame",
+        "tooltip": "Video için son kare görseli."
+      },
+      "model": {
+        "name": "model",
+        "tooltip": "Maksimum kalite için Seedance 2.0; hız optimizasyonu için Seedance 2.0 Fast."
+      },
+      "model_duration": {
+        "name": "süre"
+      },
+      "model_generate_audio": {
+        "name": "ses oluştur"
+      },
+      "model_prompt": {
+        "name": "istem"
+      },
+      "model_ratio": {
+        "name": "oran"
+      },
+      "model_resolution": {
+        "name": "çözünürlük"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed, düğümün tekrar çalıştırılıp çalıştırılmayacağını kontrol eder; seed ne olursa olsun sonuçlar deterministik değildir."
+      },
+      "watermark": {
+        "name": "watermark",
+        "tooltip": "Videoya filigran eklenip eklenmeyeceği."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "description": "Seedance 2.0 ile referans görseller, videolar ve sesler kullanarak video oluşturun, düzenleyin veya uzatın. Çok modlu referans, video düzenleme ve video uzatma desteklenir.",
+    "display_name": "ByteDance Seedance 2.0 Referanstan Videoya",
+    "inputs": {
+      "control_after_generate": {
+        "name": "oluşturduktan sonra kontrol et"
+      },
+      "model": {
+        "name": "model",
+        "tooltip": "Maksimum kalite için Seedance 2.0; hız optimizasyonu için Seedance 2.0 Fast."
+      },
+      "model_duration": {
+        "name": "süre"
+      },
+      "model_generate_audio": {
+        "name": "ses oluştur"
+      },
+      "model_prompt": {
+        "name": "istem"
+      },
+      "model_ratio": {
+        "name": "oran"
+      },
+      "model_resolution": {
+        "name": "çözünürlük"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed, düğümün tekrar çalıştırılıp çalıştırılmayacağını kontrol eder; seed ne olursa olsun sonuçlar deterministik değildir."
+      },
+      "watermark": {
+        "name": "watermark",
+        "tooltip": "Videoya filigran eklenip eklenmeyeceği."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "description": "Seedance 2.0 modelleriyle metin istemine dayalı video oluşturun.",
+    "display_name": "ByteDance Seedance 2.0 Metinden Videoya",
+    "inputs": {
+      "control_after_generate": {
+        "name": "oluşturduktan sonra kontrol et"
+      },
+      "model": {
+        "name": "model",
+        "tooltip": "Maksimum kalite için Seedance 2.0; hız optimizasyonu için Seedance 2.0 Fast."
+      },
+      "model_duration": {
+        "name": "süre"
+      },
+      "model_generate_audio": {
+        "name": "ses oluştur"
+      },
+      "model_prompt": {
+        "name": "istem"
+      },
+      "model_ratio": {
+        "name": "oran"
+      },
+      "model_resolution": {
+        "name": "çözünürlük"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed, düğümün tekrar çalıştırılıp çalıştırılmayacağını kontrol eder; seed ne olursa olsun sonuçlar deterministik değildir."
+      },
+      "watermark": {
+        "name": "watermark",
+        "tooltip": "Videoya filigran eklenip eklenmeyeceği."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "description": "İlk ve son kareleri kullanarak video oluşturun.",
     "display_name": "ByteDance İlk-Son-Kare'den Videoya",

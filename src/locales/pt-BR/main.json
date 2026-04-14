@@ -2495,6 +2495,8 @@
     "advancedInputs": "ENTRADAS AVANÇADAS",
     "bypass": "Ignorar",
     "color": "Cor do nó",
+    "editSubgraph": "Editar subgrafo",
+    "editTitle": "Editar título",
     "enterSubgraph": "Entrar no subgrafo",
     "errorHelp": "Para mais ajuda, {github} ou {support}",
     "errorHelpGithub": "enviar um issue no GitHub",

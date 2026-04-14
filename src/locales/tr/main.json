@@ -2495,6 +2495,8 @@
     "advancedInputs": "GELİŞMİŞ GİRDİLER",
     "bypass": "Atla",
     "color": "Düğüm rengi",
+    "editSubgraph": "Alt grafiği düzenle",
+    "editTitle": "Başlığı düzenle",
     "enterSubgraph": "Alt grafiğe gir",
     "errorHelp": "Daha fazla yardım için {github} veya {support}",
     "errorHelpGithub": "bir GitHub sorunu gönderin",

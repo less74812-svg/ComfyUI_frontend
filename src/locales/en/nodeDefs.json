@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "display_name": "ByteDance Seedance 2.0 First-Last-Frame to Video",
+    "description": "Generate video using Seedance 2.0 from a first frame image and optional last frame image.",
+    "inputs": {
+      "model": {
+        "name": "model",
+        "tooltip": "Seedance 2.0 for maximum quality; Seedance 2.0 Fast for speed optimization."
+      },
+      "first_frame": {
+        "name": "first_frame",
+        "tooltip": "First frame image for the video."
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed controls whether the node should re-run; results are non-deterministic regardless of seed."
+      },
+      "watermark": {
+        "name": "watermark",
+        "tooltip": "Whether to add a watermark to the video."
+      },
+      "last_frame": {
+        "name": "last_frame",
+        "tooltip": "Last frame image for the video."
+      },
+      "control_after_generate": {
+        "name": "control after generate"
+      },
+      "model_duration": {
+        "name": "duration"
+      },
+      "model_generate_audio": {
+        "name": "generate_audio"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "ratio"
+      },
+      "model_resolution": {
+        "name": "resolution"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "display_name": "ByteDance Seedance 2.0 Reference to Video",
+    "description": "Generate, edit, or extend video using Seedance 2.0 with reference images, videos, and audio. Supports multimodal reference, video editing, and video extension.",
+    "inputs": {
+      "model": {
+        "name": "model",
+        "tooltip": "Seedance 2.0 for maximum quality; Seedance 2.0 Fast for speed optimization."
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed controls whether the node should re-run; results are non-deterministic regardless of seed."
+      },
+      "watermark": {
+        "name": "watermark",
+        "tooltip": "Whether to add a watermark to the video."
+      },
+      "control_after_generate": {
+        "name": "control after generate"
+      },
+      "model_duration": {
+        "name": "duration"
+      },
+      "model_generate_audio": {
+        "name": "generate_audio"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "ratio"
+      },
+      "model_resolution": {
+        "name": "resolution"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "display_name": "ByteDance Seedance 2.0 Text to Video",
+    "description": "Generate video using Seedance 2.0 models based on a text prompt.",
+    "inputs": {
+      "model": {
+        "name": "model",
+        "tooltip": "Seedance 2.0 for maximum quality; Seedance 2.0 Fast for speed optimization."
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "Seed controls whether the node should re-run; results are non-deterministic regardless of seed."
+      },
+      "watermark": {
+        "name": "watermark",
+        "tooltip": "Whether to add a watermark to the video."
+      },
+      "control_after_generate": {
+        "name": "control after generate"
+      },
+      "model_duration": {
+        "name": "duration"
+      },
+      "model_generate_audio": {
+        "name": "generate_audio"
+      },
+      "model_prompt": {
+        "name": "prompt"
+      },
+      "model_ratio": {
+        "name": "ratio"
+      },
+      "model_resolution": {
+        "name": "resolution"
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "display_name": "ByteDance First-Last-Frame to Video",
     "description": "Generate video using prompt and first and last frames.",

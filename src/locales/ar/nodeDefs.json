@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "description": "إنشاء فيديو باستخدام Seedance 2.0 من صورة الإطار الأول وصورة الإطار الأخير (اختياري).",
+    "display_name": "ByteDance Seedance 2.0 من الإطار الأول/الأخير إلى فيديو",
+    "inputs": {
+      "control_after_generate": {
+        "name": "التحكم بعد الإنشاء"
+      },
+      "first_frame": {
+        "name": "الإطار الأول",
+        "tooltip": "صورة الإطار الأول للفيديو."
+      },
+      "last_frame": {
+        "name": "الإطار الأخير",
+        "tooltip": "صورة الإطار الأخير للفيديو."
+      },
+      "model": {
+        "name": "النموذج",
+        "tooltip": "Seedance 2.0 لأعلى جودة؛ Seedance 2.0 Fast لتحسين السرعة."
+      },
+      "model_duration": {
+        "name": "المدة"
+      },
+      "model_generate_audio": {
+        "name": "توليد الصوت"
+      },
+      "model_prompt": {
+        "name": "الموجه"
+      },
+      "model_ratio": {
+        "name": "النسبة"
+      },
+      "model_resolution": {
+        "name": "الدقة"
+      },
+      "seed": {
+        "name": "البذرة",
+        "tooltip": "البذرة تتحكم في ما إذا كان يجب إعادة تشغيل العقدة؛ النتائج غير حتمية بغض النظر عن البذرة."
+      },
+      "watermark": {
+        "name": "علامة مائية",
+        "tooltip": "هل تريد إضافة علامة مائية إلى الفيديو."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "description": "إنشاء أو تعديل أو تمديد فيديو باستخدام Seedance 2.0 مع صور أو فيديوهات أو صوت مرجعي. يدعم المراجع متعددة الوسائط، وتحرير الفيديو، وتمديد الفيديو.",
+    "display_name": "ByteDance Seedance 2.0 من مرجع إلى فيديو",
+    "inputs": {
+      "control_after_generate": {
+        "name": "التحكم بعد الإنشاء"
+      },
+      "model": {
+        "name": "النموذج",
+        "tooltip": "Seedance 2.0 لأعلى جودة؛ Seedance 2.0 Fast لتحسين السرعة."
+      },
+      "model_duration": {
+        "name": "المدة"
+      },
+      "model_generate_audio": {
+        "name": "توليد الصوت"
+      },
+      "model_prompt": {
+        "name": "الموجه"
+      },
+      "model_ratio": {
+        "name": "النسبة"
+      },
+      "model_resolution": {
+        "name": "الدقة"
+      },
+      "seed": {
+        "name": "البذرة",
+        "tooltip": "البذرة تتحكم في ما إذا كان يجب إعادة تشغيل العقدة؛ النتائج غير حتمية بغض النظر عن البذرة."
+      },
+      "watermark": {
+        "name": "علامة مائية",
+        "tooltip": "هل تريد إضافة علامة مائية إلى الفيديو."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "description": "إنشاء فيديو باستخدام نماذج Seedance 2.0 بناءً على موجه نصي.",
+    "display_name": "ByteDance Seedance 2.0 من نص إلى فيديو",
+    "inputs": {
+      "control_after_generate": {
+        "name": "التحكم بعد الإنشاء"
+      },
+      "model": {
+        "name": "النموذج",
+        "tooltip": "Seedance 2.0 لأعلى جودة؛ Seedance 2.0 Fast لتحسين السرعة."
+      },
+      "model_duration": {
+        "name": "المدة"
+      },
+      "model_generate_audio": {
+        "name": "توليد الصوت"
+      },
+      "model_prompt": {
+        "name": "الموجه"
+      },
+      "model_ratio": {
+        "name": "النسبة"
+      },
+      "model_resolution": {
+        "name": "الدقة"
+      },
+      "seed": {
+        "name": "البذرة",
+        "tooltip": "البذرة تتحكم في ما إذا كان يجب إعادة تشغيل العقدة؛ النتائج غير حتمية بغض النظر عن البذرة."
+      },
+      "watermark": {
+        "name": "علامة مائية",
+        "tooltip": "هل تريد إضافة علامة مائية إلى الفيديو."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "description": "إنشاء فيديو باستخدام المطالبة النصية والإطار الأول والأخير.",
     "display_name": "تحويل الإطار الأول-الأخير من ByteDance إلى فيديو",

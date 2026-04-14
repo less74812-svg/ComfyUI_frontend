@@ -2495,6 +2495,8 @@
     "advancedInputs": "ENTRÉES AVANCÉES",
     "bypass": "Contourner",
     "color": "Couleur du nœud",
+    "editSubgraph": "Modifier le sous-graphe",
+    "editTitle": "Modifier le titre",
     "enterSubgraph": "Entrer dans le sous-graphe",
     "errorHelp": "Pour plus d'aide, {github} ou {support}",
     "errorHelpGithub": "soumettre un ticket GitHub",

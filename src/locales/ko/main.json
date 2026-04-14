@@ -2495,6 +2495,8 @@
     "advancedInputs": "고급 입력",
     "bypass": "우회",
     "color": "노드 색상",
+    "editSubgraph": "서브그래프 편집",
+    "editTitle": "제목 편집",
     "enterSubgraph": "서브그래프 진입",
     "errorHelp": "더 많은 도움이 필요하시면 {github} 또는 {support}를 이용하세요.",
     "errorHelpGithub": "GitHub 이슈 제출",

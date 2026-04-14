@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "description": "تولید ویدیو با استفاده از Seedance 2.0 از تصویر اولین فریم و در صورت نیاز تصویر آخرین فریم.",
+    "display_name": "ByteDance Seedance 2.0 تبدیل اولین-آخرین فریم به ویدیو",
+    "inputs": {
+      "control_after_generate": {
+        "name": "کنترل پس از تولید"
+      },
+      "first_frame": {
+        "name": "اولین فریم",
+        "tooltip": "تصویر اولین فریم برای ویدیو."
+      },
+      "last_frame": {
+        "name": "آخرین فریم",
+        "tooltip": "تصویر آخرین فریم برای ویدیو."
+      },
+      "model": {
+        "name": "مدل",
+        "tooltip": "Seedance 2.0 برای بالاترین کیفیت؛ Seedance 2.0 Fast برای بهینه‌سازی سرعت."
+      },
+      "model_duration": {
+        "name": "مدت زمان"
+      },
+      "model_generate_audio": {
+        "name": "تولید صدا"
+      },
+      "model_prompt": {
+        "name": "پرامپت"
+      },
+      "model_ratio": {
+        "name": "نسبت تصویر"
+      },
+      "model_resolution": {
+        "name": "رزولوشن"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "seed تعیین می‌کند که node باید دوباره اجرا شود یا خیر؛ نتایج صرف‌نظر از seed غیرقطعی هستند."
+      },
+      "watermark": {
+        "name": "واترمارک",
+        "tooltip": "آیا واترمارک به ویدیو اضافه شود یا خیر."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "description": "تولید، ویرایش یا گسترش ویدیو با استفاده از Seedance 2.0 و تصاویر مرجع، ویدیوها و صدا. پشتیبانی از مرجع چندرسانه‌ای، ویرایش ویدیو و گسترش ویدیو.",
+    "display_name": "ByteDance Seedance 2.0 مرجع به ویدیو",
+    "inputs": {
+      "control_after_generate": {
+        "name": "کنترل پس از تولید"
+      },
+      "model": {
+        "name": "مدل",
+        "tooltip": "Seedance 2.0 برای بالاترین کیفیت؛ Seedance 2.0 Fast برای بهینه‌سازی سرعت."
+      },
+      "model_duration": {
+        "name": "مدت زمان"
+      },
+      "model_generate_audio": {
+        "name": "تولید صدا"
+      },
+      "model_prompt": {
+        "name": "پرامپت"
+      },
+      "model_ratio": {
+        "name": "نسبت تصویر"
+      },
+      "model_resolution": {
+        "name": "رزولوشن"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "seed تعیین می‌کند که node باید دوباره اجرا شود یا خیر؛ نتایج صرف‌نظر از seed غیرقطعی هستند."
+      },
+      "watermark": {
+        "name": "واترمارک",
+        "tooltip": "آیا واترمارک به ویدیو اضافه شود یا خیر."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "description": "تولید ویدیو با استفاده از مدل‌های Seedance 2.0 بر اساس پرامپت متنی.",
+    "display_name": "ByteDance Seedance 2.0 متن به ویدیو",
+    "inputs": {
+      "control_after_generate": {
+        "name": "کنترل پس از تولید"
+      },
+      "model": {
+        "name": "مدل",
+        "tooltip": "Seedance 2.0 برای بالاترین کیفیت؛ Seedance 2.0 Fast برای بهینه‌سازی سرعت."
+      },
+      "model_duration": {
+        "name": "مدت زمان"
+      },
+      "model_generate_audio": {
+        "name": "تولید صدا"
+      },
+      "model_prompt": {
+        "name": "پرامپت"
+      },
+      "model_ratio": {
+        "name": "نسبت تصویر"
+      },
+      "model_resolution": {
+        "name": "رزولوشن"
+      },
+      "seed": {
+        "name": "seed",
+        "tooltip": "seed تعیین می‌کند که node باید دوباره اجرا شود یا خیر؛ نتایج صرف‌نظر از seed غیرقطعی هستند."
+      },
+      "watermark": {
+        "name": "واترمارک",
+        "tooltip": "آیا واترمارک به ویدیو اضافه شود یا خیر."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "description": "تولید ویدیو با استفاده از پرامپت و اولین و آخرین فریم.",
     "display_name": "تبدیل اولین و آخرین فریم به ویدیو ByteDance",

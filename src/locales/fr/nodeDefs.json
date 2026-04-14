@@ -472,6 +472,137 @@
       }
     }
   },
+  "ByteDance2FirstLastFrameNode": {
+    "description": "Générez une vidéo avec Seedance 2.0 à partir d'une image de première image et, éventuellement, d'une image de dernière image.",
+    "display_name": "ByteDance Seedance 2.0 Première-Dernière-Image vers Vidéo",
+    "inputs": {
+      "control_after_generate": {
+        "name": "contrôle après génération"
+      },
+      "first_frame": {
+        "name": "première image",
+        "tooltip": "Image de la première image pour la vidéo."
+      },
+      "last_frame": {
+        "name": "dernière image",
+        "tooltip": "Image de la dernière image pour la vidéo."
+      },
+      "model": {
+        "name": "modèle",
+        "tooltip": "Seedance 2.0 pour une qualité maximale ; Seedance 2.0 Fast pour une optimisation de la vitesse."
+      },
+      "model_duration": {
+        "name": "durée"
+      },
+      "model_generate_audio": {
+        "name": "générer_audio"
+      },
+      "model_prompt": {
+        "name": "invite"
+      },
+      "model_ratio": {
+        "name": "ratio"
+      },
+      "model_resolution": {
+        "name": "résolution"
+      },
+      "seed": {
+        "name": "graine",
+        "tooltip": "La graine contrôle si le nœud doit être relancé ; les résultats sont non déterministes quel que soit la graine."
+      },
+      "watermark": {
+        "name": "filigrane",
+        "tooltip": "Ajouter ou non un filigrane à la vidéo."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2ReferenceNode": {
+    "description": "Générez, éditez ou étendez une vidéo avec Seedance 2.0 à l'aide d'images, de vidéos et d'audios de référence. Prend en charge la référence multimodale, l'édition vidéo et l'extension vidéo.",
+    "display_name": "ByteDance Seedance 2.0 Référence vers Vidéo",
+    "inputs": {
+      "control_after_generate": {
+        "name": "contrôle après génération"
+      },
+      "model": {
+        "name": "modèle",
+        "tooltip": "Seedance 2.0 pour une qualité maximale ; Seedance 2.0 Fast pour une optimisation de la vitesse."
+      },
+      "model_duration": {
+        "name": "durée"
+      },
+      "model_generate_audio": {
+        "name": "générer_audio"
+      },
+      "model_prompt": {
+        "name": "invite"
+      },
+      "model_ratio": {
+        "name": "ratio"
+      },
+      "model_resolution": {
+        "name": "résolution"
+      },
+      "seed": {
+        "name": "graine",
+        "tooltip": "La graine contrôle si le nœud doit être relancé ; les résultats sont non déterministes quel que soit la graine."
+      },
+      "watermark": {
+        "name": "filigrane",
+        "tooltip": "Ajouter ou non un filigrane à la vidéo."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
+  "ByteDance2TextToVideoNode": {
+    "description": "Générez une vidéo avec les modèles Seedance 2.0 à partir d'une invite textuelle.",
+    "display_name": "ByteDance Seedance 2.0 Texte vers Vidéo",
+    "inputs": {
+      "control_after_generate": {
+        "name": "contrôle après génération"
+      },
+      "model": {
+        "name": "modèle",
+        "tooltip": "Seedance 2.0 pour une qualité maximale ; Seedance 2.0 Fast pour une optimisation de la vitesse."
+      },
+      "model_duration": {
+        "name": "durée"
+      },
+      "model_generate_audio": {
+        "name": "générer_audio"
+      },
+      "model_prompt": {
+        "name": "invite"
+      },
+      "model_ratio": {
+        "name": "ratio"
+      },
+      "model_resolution": {
+        "name": "résolution"
+      },
+      "seed": {
+        "name": "graine",
+        "tooltip": "La graine contrôle si le nœud doit être relancé ; les résultats sont non déterministes quel que soit la graine."
+      },
+      "watermark": {
+        "name": "filigrane",
+        "tooltip": "Ajouter ou non un filigrane à la vidéo."
+      }
+    },
+    "outputs": {
+      "0": {
+        "tooltip": null
+      }
+    }
+  },
   "ByteDanceFirstLastFrameNode": {
     "description": "Générer une vidéo en utilisant l'invite et les première et dernière images.",
     "display_name": "ByteDance Première-Dernière Image vers Vidéo",

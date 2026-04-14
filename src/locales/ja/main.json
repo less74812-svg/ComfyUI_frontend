@@ -2495,6 +2495,8 @@
     "advancedInputs": "詳細入力",
     "bypass": "バイパス",
     "color": "ノードカラー",
+    "editSubgraph": "サブグラフを編集",
+    "editTitle": "タイトルを編集",
     "enterSubgraph": "サブグラフに入る",
     "errorHelp": "詳細なヘルプについては、{github} または {support} をご利用ください",
     "errorHelpGithub": "GitHub イシューを提出",

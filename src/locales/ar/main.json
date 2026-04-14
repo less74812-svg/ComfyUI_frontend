@@ -2495,6 +2495,8 @@
     "advancedInputs": "مدخلات متقدمة",
     "bypass": "تجاوز",
     "color": "لون العقدة",
+    "editSubgraph": "تعديل الرسم البياني الفرعي",
+    "editTitle": "تعديل العنوان",
     "enterSubgraph": "دخول الرسم الفرعي",
     "errorHelp": "للمزيد من المساعدة، {github} أو {support}",
     "errorHelpGithub": "إرسال مشكلة على GitHub",
